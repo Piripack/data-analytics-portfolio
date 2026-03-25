@@ -11,7 +11,7 @@
     <section class="hero">
       <div class="eyebrow">Contemporary Web Applications</div>
       <h1>MKD Pharmacies</h1>
-      <p class="sub">A full-stack pharmacy ecommerce platform planned through system analysis and delivered as a Next.js application with Firebase authentication, Firestore-backed stock control, admin inventory management, and a branch locator built around map-based discovery.</p>
+      <p class="sub">A pharmacy ecommerce build that combines customer browsing, admin stock management, guarded checkout logic, and branch-level location browsing in one system.</p>
       <div>
         <span class="pill">Next.js App Router</span>
         <span class="pill">React</span>
@@ -27,8 +27,8 @@
       <div class="split">
         <div>
           <h2>Overview</h2>
-          <p>MKD Pharmacies is a full-stack web application for browsing products, managing pharmacy stock, and supporting location-aware ordering across multiple branches. The project combines system design work with a working implementation covering customer journeys, admin operations, and stock-safe checkout behaviour.</p>
-          <p>The codebase includes `src/actions` for server-side mutations, `src/context` for authentication and basket state, `src/components/admin` for stock management, and a map module for branch discovery. The resulting project shows more than a frontend mock-up because it connects interface work to stock validation, role-based access, and multi-location ordering logic.</p>
+          <p>MKD Pharmacies was built around a straightforward problem: let customers browse products and place orders, while giving staff enough control to manage stock and branch-level information. The public version of the project focuses on the parts that matter most on a portfolio page: user flow, admin flow, transaction logic, and system structure.</p>
+          <p>Under the surface, the app separates search and order handling, user state, admin tools, and map behaviour into distinct areas. That matters. It keeps the project from feeling like a single-page mock-up and makes the checkout and stock logic easier to reason about.</p>
 
           <div class="section">
             <h2>What Was Built</h2>
@@ -45,7 +45,7 @@
             <h2>Technical Evidence</h2>
             <ul>
               <li>`src/actions/orders.js` uses `runTransaction` to validate current stock, update inventory, and create orders atomically.</li>
-              <li>`src/actions/search.js` handles product search on the server rather than exposing a separate custom API layer.</li>
+              <li>`src/actions/search.js` keeps product search on the server and centralises that logic close to the data layer.</li>
               <li>`src/context/CartContext.js` persists the basket in local storage and clears it when the user logs out.</li>
               <li>`src/components/map/MapWrapper.js` dynamically loads the map with `ssr: false` to avoid server-side rendering conflicts.</li>
               <li>`src/components/admin/AddProductForm.js` shows branch-aware product creation with dosage, expiry, usage, and side-effect fields.</li>
@@ -58,14 +58,23 @@
               <li>The design report mapped nine use cases across search, ordering, authentication, admin stock control, order history, cancellation, and branch discovery.</li>
               <li>The transaction sequence diagram adds genuine systems thinking by showing how concurrent checkout should fail safely when stock runs out.</li>
               <li>The Firestore schema links users, products, pharmacies, and orders into a clear operational data model.</li>
-              <li>This makes the project useful in a portfolio because it demonstrates planning, implementation, and interface delivery together.</li>
+              <li>Together, those artefacts show the jump from planning into an implemented build with a clear operational shape.</li>
             </ul>
           </div>
 
           <div class="section">
-            <h2>Portfolio Positioning</h2>
-            <p>This is a strong full-stack portfolio piece for a junior web developer because it shows practical architecture choices rather than just page styling. The strongest public framing is an end-to-end healthcare ordering platform with secure login, admin tooling, stock-safe checkout, and branch discovery.</p>
-            <p class="note">One report claim about raw Leaflet usage was not repeated here because the actual code imports `react-leaflet`. The page is written from the verified implementation and screenshots, not from unverified wording in the report.</p>
+            <h2>Operational Value</h2>
+            <ul>
+              <li>The most important decision in this build was to treat stock accuracy as a control problem. That is why checkout uses transaction logic and server-side checks to protect inventory state.</li>
+              <li>The branch-level flow matters because it separates central ordering from local availability and gives the system a clearer operational model.</li>
+              <li>For healthcare or pharmacy-adjacent digital roles, the useful signal is the emphasis on access control, stock visibility, and failure-safe behaviour.</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Scope and Notes</h2>
+            <p>This works best as a portfolio project because it shows both structure and delivery. There is enough on the page to understand what was built, how stock safety was handled, and how the user and admin journeys differ.</p>
+            <p class="note">One report claim about raw Leaflet usage was left out here because the implementation evidence showed `react-leaflet`. The page sticks to what could be checked cleanly.</p>
           </div>
         </div>
 

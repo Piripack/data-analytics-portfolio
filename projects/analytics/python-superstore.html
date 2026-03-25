@@ -11,7 +11,7 @@
     <section class="hero">
       <div class="eyebrow">Project 02</div>
       <h1>Python EDA and Data Cleaning on Superstore</h1>
-      <p class="sub">Audited and profiled the Superstore transactional dataset in Python to validate structure, inspect distributions, and document repeatable cleaning steps.</p>
+      <p class="sub">Audited and profiled the Superstore transactional dataset in Python to validate structure, inspect distributions, and document repeatable cleaning steps before any KPI reporting or dashboard work.</p>
     </section>
     <nav class="nav">
       <a href="index.html">Back to index</a>
@@ -21,7 +21,7 @@
       <div class="project">
         <div>
           <h2>Overview</h2>
-          <p>This project moved the Superstore analysis from manual spreadsheet work into a code-based workflow using pandas, numpy, and scikit-learn utilities. The emphasis was on data quality checks, profiling, and descriptive analysis that could be repeated more reliably than in Excel alone.</p>
+          <p>This project moved the Superstore analysis into a code-based workflow using pandas, numpy, and scikit-learn utilities. The emphasis was on data quality checks, profiling, and descriptive analysis that could be rerun consistently.</p>
           <p><span class="pill">Python</span> <span class="pill">pandas</span> <span class="pill">numpy</span> <span class="pill">SimpleImputer</span></p>
           <div class="section">
             <h2>Approach</h2>
@@ -40,6 +40,14 @@
               <li>Sales ranged from 0.44 to 22,638.48, indicating a wide spread in transaction values.</li>
               <li>The reported sales standard deviation was 623.25 and variance was 38,434.45, confirming high variability.</li>
               <li>The workflow showed a clear shift from one-off spreadsheet analysis to a more repeatable code-based process.</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>Decision Implications</h2>
+            <ul>
+              <li>The dataset was structurally sound enough to analyse directly, which means effort could move from repair work into interpretation and reporting.</li>
+              <li>The wide spread in sales values means headline averages should be treated cautiously. Any KPI pack built on this data should include spread, median, or segment-level breakdowns.</li>
+              <li>The main practical gain was workflow reliability: once the checks are scripted, the same validation can be rerun before dashboard refreshes or further modelling.</li>
             </ul>
           </div>
         </div>
@@ -65,7 +73,7 @@
       </section>
       <section class="section">
         <h2>Business Value</h2>
-        <p>The main value here is workflow maturity rather than a specific chart. This project shows the ability to profile a dataset systematically, document data quality assumptions, and prepare analysis in a form that can be rerun and extended.</p>
+        <p>The main value here is workflow reliability. In an analytics role, this is the part that keeps KPI reporting credible: check the structure, test the assumptions, and make sure the next stage is working from something stable.</p>
       </section>
     </section>
     <div class="footer">Source basis: figures 31 and 35 from the uploaded report.</div>

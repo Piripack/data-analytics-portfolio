@@ -11,7 +11,7 @@
     <section class="hero">
       <div class="eyebrow">Data Science</div>
       <h1>BEED EEG Classification</h1>
-      <p class="sub">A supervised machine learning project using the Bangalore EEG Epilepsy Dataset to compare a Logistic Regression baseline against an RBF-kernel SVM, with stratified splitting, leakage-safe scaling, exploratory analysis, and supplementary feature importance review.</p>
+      <p class="sub">A supervised machine learning case study comparing a simple linear baseline against a tuned SVM on a four-class EEG classification task, presented as healthcare-adjacent analysis with clear evaluation boundaries.</p>
       <div>
         <span class="pill">Python</span>
         <span class="pill">pandas</span>
@@ -28,8 +28,8 @@
       <div class="split">
         <div>
           <h2>Overview</h2>
-          <p>This project applies a standard supervised learning workflow to the Bangalore EEG Epilepsy Dataset (BEED), framed as a four-class classification task. The work covers dataset quality checks, exploratory analysis, leakage-safe preprocessing, baseline modelling, hyperparameter tuning, confusion-matrix evaluation, and a short permutation-importance appendix.</p>
-          <p>The final comparison is clear and defensible: a simple Logistic Regression baseline achieved <strong>0.462 accuracy</strong> and <strong>0.466 macro F1</strong>, while the tuned RBF SVM improved performance to <strong>0.860 accuracy</strong> and <strong>0.859 macro F1</strong> on the held-out test set.</p>
+          <p>This project applies a supervised learning workflow to the Bangalore EEG Epilepsy Dataset, starting with a linear baseline and then testing whether a tuned non-linear model performs better on the same four-class task. The structure is simple on purpose: data checks, stratified split, baseline, stronger model, then evaluation.</p>
+          <p>The comparison is easy to follow. Logistic Regression reached <strong>0.462 accuracy</strong> and <strong>0.466 macro F1</strong>. A tuned RBF SVM pushed that to <strong>0.860 accuracy</strong> and <strong>0.859 macro F1</strong> on the held-out test set.</p>
 
           <div class="section">
             <h2>Dataset and Preparation</h2>
@@ -47,7 +47,7 @@
             <h2>Exploration and Modelling</h2>
             <ul>
               <li>EDA examined class distribution, selected feature distributions, feature correlations, and PCA explained variance.</li>
-              <li>The correlation heatmap shows strong positive relationships across several feature groups, indicating redundancy as well as complementary information.</li>
+              <li>The correlation heatmap shows strong positive relationships across several feature groups, so the feature set is not simple or independent.</li>
               <li>PCA was used for interpretation only; the models were trained on the original standardised features.</li>
               <li>Logistic Regression was used first as an interpretable linear baseline.</li>
               <li>An RBF-kernel SVM was then trained as a non-linear comparison model and improved further with GridSearchCV.</li>
@@ -67,9 +67,18 @@
           </div>
 
           <div class="section">
-            <h2>Portfolio Positioning</h2>
-            <p>This is a solid junior data science portfolio piece because it shows a full modelling workflow rather than just a final score. The strongest elements are the clean preparation evidence, the baseline-to-tuned comparison, and the honest treatment of limitations around in-dataset evaluation and lack of subject-wise validation.</p>
-            <p class="note">The project is framed as an explained in-dataset classification workflow, not as a deployable clinical system. That limitation is important and was preserved from the report rather than hidden.</p>
+            <h2>Operational Relevance</h2>
+            <ul>
+              <li>The main decision here is model selection: the linear baseline underperformed, so the tuned non-linear model became the better fit for this classification task.</li>
+              <li>The project also shows a process decision that matters in healthcare analytics: keep limitations visible, because a strong score on one dataset still needs further validation before wider use.</li>
+              <li>For a healthcare-facing analytics role, the useful signal is the discipline of the workflow: quality checks, controlled split, baseline comparison, tuned model, and explicit caution around generalisation.</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Scope and Notes</h2>
+            <p>The page shows the full path from data checks to final evaluation. You can see the split, the baseline, the tuned model, and the error pattern, which gives the final score more weight than a single number on its own.</p>
+            <p class="note">This is an in-dataset classification study with a clear limitation around subject-wise validation, so the page keeps that boundary visible.</p>
           </div>
         </div>
 

@@ -4,7 +4,7 @@ This folder contains a portfolio-safe project page built from the `Contemporary 
 
 Files:
 
-- `mkd-pharmacies.html` - main standalone project page
+- `index.html` - main project page
 - `styles.css` - local styling
 - `lightbox.js` - click-to-expand image viewer
 - `images/` - only the verified diagrams and screenshots used on the page

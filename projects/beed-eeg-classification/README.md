@@ -4,7 +4,7 @@ This folder contains a portfolio-safe page for the `Data Science` module submiss
 
 Files:
 
-- `beed-eeg-classification.html` - standalone project page
+- `index.html` - standalone project page
 - `styles.css` - local page styling
 - `lightbox.js` - click-to-expand image behaviour
 - `images/` - only the verified figures and screenshots used on the page
