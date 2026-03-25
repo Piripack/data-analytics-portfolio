@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MKD Pharmacies</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">Contemporary Web Applications</div>
+      <h1>MKD Pharmacies</h1>
+      <p class="sub">A full-stack pharmacy ecommerce platform planned through system analysis and delivered as a Next.js application with Firebase authentication, Firestore-backed stock control, admin inventory management, and a branch locator built around map-based discovery.</p>
+      <div>
+        <span class="pill">Next.js App Router</span>
+        <span class="pill">React</span>
+        <span class="pill">Firebase Auth</span>
+        <span class="pill">Firestore</span>
+        <span class="pill">Tailwind CSS</span>
+        <span class="pill">Leaflet</span>
+        <span class="pill">Server Actions</span>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="split">
+        <div>
+          <h2>Overview</h2>
+          <p>MKD Pharmacies is a full-stack web application for browsing products, managing pharmacy stock, and supporting location-aware ordering across multiple branches. The project combines system design work with a working implementation covering customer journeys, admin operations, and stock-safe checkout behaviour.</p>
+          <p>The codebase includes `src/actions` for server-side mutations, `src/context` for authentication and basket state, `src/components/admin` for stock management, and a map module for branch discovery. The resulting project shows more than a frontend mock-up because it connects interface work to stock validation, role-based access, and multi-location ordering logic.</p>
+
+          <div class="section">
+            <h2>What Was Built</h2>
+            <ul>
+              <li>Product browsing with category filtering, keyword search, and add-to-basket interactions.</li>
+              <li>A basket and checkout flow with Firestore transaction logic to prevent overselling stock.</li>
+              <li>Firebase-backed sign-in and role-aware navigation for regular users and admins.</li>
+              <li>An admin inventory interface for creating and managing branch-specific products.</li>
+              <li>A branch locator page with a pharmacy map and location-aware stock browsing flow.</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Technical Evidence</h2>
+            <ul>
+              <li>`src/actions/orders.js` uses `runTransaction` to validate current stock, update inventory, and create orders atomically.</li>
+              <li>`src/actions/search.js` handles product search on the server rather than exposing a separate custom API layer.</li>
+              <li>`src/context/CartContext.js` persists the basket in local storage and clears it when the user logs out.</li>
+              <li>`src/components/map/MapWrapper.js` dynamically loads the map with `ssr: false` to avoid server-side rendering conflicts.</li>
+              <li>`src/components/admin/AddProductForm.js` shows branch-aware product creation with dosage, expiry, usage, and side-effect fields.</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Design and Architecture Value</h2>
+            <ul>
+              <li>The design report mapped nine use cases across search, ordering, authentication, admin stock control, order history, cancellation, and branch discovery.</li>
+              <li>The transaction sequence diagram adds genuine systems thinking by showing how concurrent checkout should fail safely when stock runs out.</li>
+              <li>The Firestore schema links users, products, pharmacies, and orders into a clear operational data model.</li>
+              <li>This makes the project useful in a portfolio because it demonstrates planning, implementation, and interface delivery together.</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Portfolio Positioning</h2>
+            <p>This is a strong full-stack portfolio piece for a junior web developer because it shows practical architecture choices rather than just page styling. The strongest public framing is an end-to-end healthcare ordering platform with secure login, admin tooling, stock-safe checkout, and branch discovery.</p>
+            <p class="note">One report claim about raw Leaflet usage was not repeated here because the actual code imports `react-leaflet`. The page is written from the verified implementation and screenshots, not from unverified wording in the report.</p>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <figure>
+            <img src="images/use-case-diagram.png" alt="Use case diagram for MKD Pharmacies">
+            <figcaption class="caption">Use case coverage across browse, ordering, authentication, admin inventory, order history, cancellation, and branch map flows.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/transaction-sequence.png" alt="Transaction sequence diagram for checkout">
+            <figcaption class="caption">Sequence diagram showing transaction-based stock protection during concurrent checkout attempts.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/firestore-schema.png" alt="Firestore schema for MKD Pharmacies">
+            <figcaption class="caption">Planned Firestore structure linking users, products, pharmacies, and orders.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/browse-products.png" alt="Browse products interface in MKD Pharmacies">
+            <figcaption class="caption">Product browsing interface with search, category filtering, and add-to-basket actions.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/shopping-basket.png" alt="Shopping basket and checkout summary">
+            <figcaption class="caption">Basket summary showing item totals, delivery fee, and the secure checkout action.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/patient-login.png" alt="Patient login screen">
+            <figcaption class="caption">Authentication screen used to gate patient ordering and role-aware navigation.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/admin-inventory.png" alt="Admin inventory management screen">
+            <figcaption class="caption">Admin stock interface for adding branch inventory with richer product metadata.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/branch-map.png" alt="Branch locator map screen">
+            <figcaption class="caption">Map-based branch locator supporting pharmacy discovery and location-aware ordering.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <section class="section">
+        <h2>Key Metrics</h2>
+        <div class="metrics">
+          <div class="metric"><strong>9</strong>Primary use cases defined in the system design</div>
+          <div class="metric"><strong>2</strong>Main user roles: regular user and admin</div>
+          <div class="metric"><strong>5</strong>Verified implementation screens used as portfolio evidence</div>
+          <div class="metric"><strong>4</strong>Core Firestore collections: users, products, pharmacies, and orders</div>
+        </div>
+      </section>
+    </section>
+
+    <div class="footer">Source basis: `AE1_REPORT_FINAL_10300471.docx`, `AE2_Pharmacy_Implementation_Report.docx`, verified extracted screenshots and diagrams, and inspected Next.js source files from the implementation submission.</div>
+  </main>
+  <script src="lightbox.js"></script>
+</body>
+</html>

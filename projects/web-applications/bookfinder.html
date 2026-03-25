@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookFinder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">Project 02</div>
+      <h1>BookFinder</h1>
+      <p class="sub">A smaller Express and SQLite web application for searching books, logging in, reserving titles, and adding new books with role-based restrictions.</p>
+    </section>
+    <nav class="nav">
+      <a href="index.html">Back to module index</a>
+      <a href="eventease.html">Back to EventEase</a>
+    </nav>
+    <section class="content">
+      <h2>Overview</h2>
+      <p>BookFinder is a more constrained exercise than EventEase, but it still shows useful web application fundamentals: AJAX requests from the browser, Express routes, SQLite queries, session handling, reservation logic, and admin-only actions. The code is task-oriented because it was built from a time-constrained assessment template, but the completed functionality is still clear.</p>
+      <p><span class="pill">HTML</span> <span class="pill">Client-side JavaScript</span> <span class="pill">Express</span> <span class="pill">SQLite</span> <span class="pill">express-session</span></p>
+
+      <div class="section">
+        <h2>What Was Built</h2>
+        <ul>
+          <li>Book search by title and author using AJAX and SQL <code>LIKE</code> filters.</li>
+          <li>Book detail retrieval as JSON via an Express route.</li>
+          <li>Reservation handling with insert logic into a reservations table and book availability updates.</li>
+          <li>Session-based login handling on the server and login requests from the client.</li>
+          <li>Admin-gated add-book functionality with user-friendly error messaging on missing fields.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Technical Evidence</h2>
+        <ul>
+          <li>The server includes routes for <code>/searchBook</code>, <code>/book/:id</code>, <code>/reserveBook</code>, <code>/addBook</code>, and <code>/login</code>.</li>
+          <li>The client JavaScript handles search, reservation, add-book submission, and login via fetch-based AJAX calls.</li>
+          <li>The SQLite schema includes <code>users</code>, <code>books</code>, and <code>reservations</code> tables.</li>
+          <li>The bundled database currently contains 3 books, 2 reservations, and 3 users.</li>
+          <li>The implementation enforces login checks for reservations and admin checks for adding books.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Business Value</h2>
+        <p>This project is useful as evidence of core web development fundamentals: browser-to-server communication, JSON handling, database interaction, session logic, and basic role-based access control. It is a smaller exercise than EventEase, but still credible as a portfolio subsection or secondary project.</p>
+      </div>
+
+      <div class="section">
+        <h2>Key Metrics</h2>
+        <div class="metrics">
+          <div class="metric"><strong>3</strong>Books in the database</div>
+          <div class="metric"><strong>2</strong>Reservations recorded</div>
+          <div class="metric"><strong>3</strong>Users in the system</div>
+          <div class="metric"><strong>5</strong>Main Express routes completed</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Portfolio Positioning</h2>
+        <p>BookFinder works best as a secondary portfolio piece. It proves that the same module work extended beyond a single polished app and covered search, login, reservation, and admin checks in a simpler stack. The stronger visual and architectural centre of this module remains EventEase.</p>
+        <p class="note">No strong project screenshots were bundled for BookFinder beyond a decorative background image, so this page is intentionally evidence-led rather than image-led.</p>
+      </div>
+    </section>
+    <div class="footer">Source basis: BookFinder assessment files, Express and client-side code, SQLite schema, and bundled database contents.</div>
+  </main>
+</body>
+</html>

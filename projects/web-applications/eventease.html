@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventEase</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">Project 01</div>
+      <h1>EventEase</h1>
+      <p class="sub">A full-stack event booking system built with React, Express, SQLite, Material UI, session-based authentication, and Leaflet maps. Users can search events by location, view tickets, log in, and make bookings through a browser-based interface.</p>
+    </section>
+    <nav class="nav">
+      <a href="index.html">Back to module index</a>
+      <a href="bookfinder.html">Next: BookFinder</a>
+    </nav>
+    <section class="content">
+      <div class="split">
+        <div>
+          <h2>Overview</h2>
+          <p>EventEase is the stronger of the two module projects because it combines a real frontend application with a modular Express backend and a populated SQLite database. The codebase includes server routing, session handling, client-side state management, interactive map rendering, booking workflows, and a recorded demo.</p>
+          <p><span class="pill">React</span> <span class="pill">Material UI</span> <span class="pill">Express</span> <span class="pill">SQLite</span> <span class="pill">express-session</span> <span class="pill">Leaflet</span></p>
+
+          <div class="section">
+            <h2>What Was Built</h2>
+            <ul>
+              <li>REST-style API endpoints for event search by location, ticket retrieval by event, booking creation, login, logout, and current-session checks.</li>
+              <li>A React frontend with a searchable event list, login modal, booking dialog, booking history view, and theme toggle.</li>
+              <li>Leaflet and OpenStreetMap integration for showing event locations on a map with booking actions triggered from map markers.</li>
+              <li>Session-based access control so bookings are tied to a logged-in user.</li>
+              <li>Error handling for missing booking fields, insufficient ticket availability, and authentication failures.</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Technical Evidence</h2>
+            <ul>
+              <li>The backend is split into routers, controllers, DAO logic, and middleware rather than one monolithic file.</li>
+              <li>The booking controller validates required fields, blocks bookings for past events, checks ticket availability, updates availability, and inserts booking records.</li>
+              <li>The frontend uses React component composition across <code>EventSearch</code>, <code>EventList</code>, <code>EventMap</code>, <code>BookTicketDialog</code>, <code>LoginForm</code>, and <code>MyBookings</code>.</li>
+              <li>The SQLite database contains 5 events, 11 ticket rows, 30 bookings, and 4 users.</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Business Value</h2>
+            <p>The project demonstrates the kind of full-stack flow expected in a small production-style web app: search, browse, authenticate, transact, and review user-specific data. It shows more than just endpoint construction because the frontend and backend are clearly integrated around a real booking journey.</p>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <figure>
+            <img src="images/image19.png" alt="EventEase search results interface">
+            <figcaption class="caption">EventEase search interface showing location-based event search and a successful API request.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/image21.png" alt="Successful booking confirmation in EventEase">
+            <figcaption class="caption">Booking confirmation shown after a successful POST request.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/image24.png" alt="Booking validation error in EventEase">
+            <figcaption class="caption">Client-side error feedback when booking fields are incomplete.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/image26.png" alt="Leaflet map popup in EventEase">
+            <figcaption class="caption">Leaflet map popup displaying event details from a location marker.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <section class="section">
+        <h2>Key Metrics</h2>
+        <div class="metrics">
+          <div class="metric"><strong>5</strong>Events in the SQLite database</div>
+          <div class="metric"><strong>11</strong>Ticket records available</div>
+          <div class="metric"><strong>30</strong>Bookings stored</div>
+          <div class="metric"><strong>4</strong>Registered users in the app database</div>
+        </div>
+      </section>
+    </section>
+    <div class="footer">Source basis: EventEase report, React and Express code, SQLite database contents, and verified screenshots from the submission bundle.</div>
+  </main>
+  <script src="lightbox.js"></script>
+</body>
+</html>

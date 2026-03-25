@@ -1,62 +1,126 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andre Ramos | Data Portfolio</title>
+  <title>Andre Ramos | Portfolio</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <main class="shell">
     <section class="hero">
       <div class="eyebrow">Portfolio Selection</div>
-      <h1>Data and BI Projects Extracted from QHO539 - Grade 84%</h1>
-      <p class="sub">A rebuilt project set based on the strongest evidence in the coursework: Excel dashboarding, Python data cleaning and EDA, Tableau dashboard design, and introductory machine learning. This version is written for employers, not for academic assessment.</p>
+      <h1>Software, data, and analytics projects rebuilt for public presentation.</h1>
+      <p class="sub">This homepage brings together the strongest portfolio-safe work across Year 2 and Year 3. The focus is on full-stack builds, data science, BI dashboards, and database engineering. The HCI work is included as a case study rather than as a main technical project.</p>
     </section>
+
     <nav class="nav">
-      <a href="excel-superstore.html">Excel Superstore Dashboard</a>
-      <a href="python-superstore.html">Python EDA and Cleaning</a>
-      <a href="tableau-superstore.html">Tableau Sales Dashboard</a>
-      <a href="student-ml.html">Student Performance Modelling</a>
+      <a href="#featured">Featured Projects</a>
+      <a href="#technical">More Technical Work</a>
+      <a href="#analytics">Analytics and BI</a>
+      <a href="#case-study">Case Study</a>
     </nav>
+
     <section class="content">
-      <div class="grid">
-        <article class="card">
-          <h2>Excel Superstore Dashboard</h2>
-          <p>Interactive spreadsheet dashboard built with PivotTables, connected slicers, monthly trend views, and category / segment analysis.</p>
-          <p><span class="pill">Excel</span> <span class="pill">PivotTables</span> <span class="pill">Slicers</span></p>
-          <p><a href="excel-superstore.html">Open project page</a></p>
-        </article>
-        <article class="card">
-          <h2>Python EDA and Cleaning</h2>
-          <p>Code-led inspection and preprocessing of a 9,994-row transactional dataset using pandas and scikit-learn utilities.</p>
-          <p><span class="pill">Python</span> <span class="pill">pandas</span> <span class="pill">SimpleImputer</span></p>
-          <p><a href="python-superstore.html">Open project page</a></p>
-        </article>
-        <article class="card">
-          <h2>Tableau Sales Dashboard</h2>
-          <p>Interactive dashboard suite covering regional sales, profitability, category filters, and technology-focused drill-down analysis.</p>
-          <p><span class="pill">Tableau</span> <span class="pill">Calculated Fields</span> <span class="pill">Dashboard Actions</span></p>
-          <p><a href="tableau-superstore.html">Open project page</a></p>
-        </article>
-        <article class="card">
-          <h2>Student Performance Modelling</h2>
-          <p>Student-performance modelling focused on K-Means clustering and KNN classification using attendance and study-hour features.</p>
-          <p><span class="pill">scikit-learn</span> <span class="pill">KNN</span> <span class="pill">K-Means</span></p>
-          <p><a href="student-ml.html">Open project page</a></p>
-        </article>
-      </div>
-      <section class="section">
-        <h2>Project Notes</h2>
-        <ul>
-          <li>These project pages are built from the strongest technical work in the report and its extracted visuals.</li>
-          <li>The focus here is on dashboards, analysis workflows, and model outputs rather than coursework structure.</li>
-          <li>The machine learning page highlights the clustering and KNN classification work from the project.</li>
-        </ul>
+      <section class="section" id="featured">
+        <h2>Featured Projects</h2>
+        <p class="lede">These are the projects that should carry the portfolio. They show the strongest mix of implementation depth, technical decision-making, and presentable outcomes.</p>
+        <div class="feature-grid">
+          <article class="card">
+            <h3>MKD Pharmacies</h3>
+            <p>Full-stack pharmacy ecommerce platform built with Next.js, Firebase, Firestore, admin inventory tooling, basket and checkout logic, and a branch locator.</p>
+            <p><span class="pill">Next.js</span> <span class="pill">React</span> <span class="pill">Firebase</span> <span class="pill">Firestore</span></p>
+            <p class="meta">Strongest web application piece from Year 3.</p>
+            <p><a href="projects/mkd-pharmacies/">Open project page</a></p>
+          </article>
+
+          <article class="card">
+            <h3>BEED EEG Classification</h3>
+            <p>Supervised machine learning workflow using the Bangalore EEG Epilepsy Dataset, comparing Logistic Regression with a tuned RBF SVM through reproducible Python analysis.</p>
+            <p><span class="pill">Python</span> <span class="pill">scikit-learn</span> <span class="pill">SVM</span> <span class="pill">GridSearchCV</span></p>
+            <p class="meta">Best pure data science piece from Year 3.</p>
+            <p><a href="projects/beed-eeg-classification/">Open project page</a></p>
+          </article>
+
+          <article class="card">
+            <h3>Warehouse Management System</h3>
+            <p>Desktop application and database system covering SQLite schema design, Tkinter interfaces, XML export, image BLOB handling, and threaded order processing.</p>
+            <p><span class="pill">Python</span> <span class="pill">SQLite</span> <span class="pill">Tkinter</span> <span class="pill">XML</span></p>
+            <p class="meta">Strong database and application engineering project.</p>
+            <p><a href="projects/warehouse-management-system/">Open project page</a></p>
+          </article>
+
+          <article class="card">
+            <h3>EventEase</h3>
+            <p>Full-stack event booking system with React, Express, SQLite, session-based authentication, API endpoints, and Leaflet-based location browsing.</p>
+            <p><span class="pill">React</span> <span class="pill">Express</span> <span class="pill">SQLite</span> <span class="pill">Leaflet</span></p>
+            <p class="meta">Strong Year 2 web application with real frontend-backend integration.</p>
+            <p><a href="projects/web-applications/eventease.html">Open project page</a></p>
+          </article>
+
+          <article class="card">
+            <h3>Tableau Sales Dashboard</h3>
+            <p>Interactive BI dashboard covering regional sales, profit analysis, category filtering, and dashboard-driven reporting.</p>
+            <p><span class="pill">Tableau</span> <span class="pill">Dashboard Design</span> <span class="pill">Calculated Fields</span></p>
+            <p class="meta">Best BI-focused dashboard project.</p>
+            <p><a href="projects/analytics/tableau-superstore.html">Open project page</a></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="technical">
+        <h2>More Technical Work</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>BookFinder</h3>
+            <p>Smaller web application showing AJAX-style interactions, SQLite storage, session handling, and admin checks.</p>
+            <p><span class="pill">JavaScript</span> <span class="pill">SQLite</span> <span class="pill">Sessions</span></p>
+            <p><a href="projects/web-applications/bookfinder.html">Open project page</a></p>
+          </article>
+
+          <article class="card">
+            <h3>Student Performance Modelling</h3>
+            <p>Exploratory modelling page focused on clustering and KNN classification outputs from the analytics module.</p>
+            <p><span class="pill">K-Means</span> <span class="pill">KNN</span> <span class="pill">scikit-learn</span></p>
+            <p><a href="projects/analytics/student-ml.html">Open project page</a></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="analytics">
+        <h2>Analytics and BI Projects</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Excel Superstore Dashboard</h3>
+            <p>Spreadsheet dashboard built with PivotTables, slicers, trend views, and category and segment analysis.</p>
+            <p><span class="pill">Excel</span> <span class="pill">PivotTables</span> <span class="pill">Slicers</span></p>
+            <p><a href="projects/analytics/excel-superstore.html">Open project page</a></p>
+          </article>
+
+          <article class="card">
+            <h3>Python EDA and Cleaning</h3>
+            <p>Code-led transactional data inspection and preprocessing using pandas, imputation, and exploratory plots.</p>
+            <p><span class="pill">Python</span> <span class="pill">pandas</span> <span class="pill">EDA</span></p>
+            <p><a href="projects/analytics/python-superstore.html">Open project page</a></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="case-study">
+        <h2>Case Study</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Solent Alumni Website Redesign</h3>
+            <p>UX case study covering personas, task analysis, prototype screens, and small-scale usability testing for an alumni website redesign.</p>
+            <p><span class="pill">UX Research</span> <span class="pill">Prototype Design</span> <span class="pill">Usability Testing</span></p>
+            <p class="note">Included as a case study rather than a main technical build.</p>
+            <p><a href="case-studies/solent-alumni-redesign/">Open case study</a></p>
+          </article>
+        </div>
       </section>
     </section>
-    <div class="footer">Built from extracted coursework evidence. Public-safe version only.</div>
+
+    <div class="footer">This site is assembled from the rebuilt project pages and only uses files stored inside this repository.</div>
   </main>
-  <script src="lightbox.js"></script>
 </body>
 </html>

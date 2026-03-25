@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEED EEG Classification</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">Data Science</div>
+      <h1>BEED EEG Classification</h1>
+      <p class="sub">A supervised machine learning project using the Bangalore EEG Epilepsy Dataset to compare a Logistic Regression baseline against an RBF-kernel SVM, with stratified splitting, leakage-safe scaling, exploratory analysis, and supplementary feature importance review.</p>
+      <div>
+        <span class="pill">Python</span>
+        <span class="pill">pandas</span>
+        <span class="pill">scikit-learn</span>
+        <span class="pill">seaborn</span>
+        <span class="pill">Matplotlib</span>
+        <span class="pill">Logistic Regression</span>
+        <span class="pill">SVM</span>
+        <span class="pill">GridSearchCV</span>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="split">
+        <div>
+          <h2>Overview</h2>
+          <p>This project applies a standard supervised learning workflow to the Bangalore EEG Epilepsy Dataset (BEED), framed as a four-class classification task. The work covers dataset quality checks, exploratory analysis, leakage-safe preprocessing, baseline modelling, hyperparameter tuning, confusion-matrix evaluation, and a short permutation-importance appendix.</p>
+          <p>The final comparison is clear and defensible: a simple Logistic Regression baseline achieved <strong>0.462 accuracy</strong> and <strong>0.466 macro F1</strong>, while the tuned RBF SVM improved performance to <strong>0.860 accuracy</strong> and <strong>0.859 macro F1</strong> on the held-out test set.</p>
+
+          <div class="section">
+            <h2>Dataset and Preparation</h2>
+            <ul>
+              <li>The local `BEED_Data.csv` file contains 8,000 observations and 17 columns.</li>
+              <li>Sixteen predictors (`X1` to `X16`) represent EEG-derived features and `y` stores four class labels.</li>
+              <li>The dataset is perfectly balanced with 2,000 observations in each class.</li>
+              <li>Quality checks found zero missing values and zero duplicate rows.</li>
+              <li>A stratified 70/30 train-test split preserved class balance across both partitions.</li>
+              <li>Standardisation was fitted on the training set only and then applied to the test set to avoid leakage.</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Exploration and Modelling</h2>
+            <ul>
+              <li>EDA examined class distribution, selected feature distributions, feature correlations, and PCA explained variance.</li>
+              <li>The correlation heatmap shows strong positive relationships across several feature groups, indicating redundancy as well as complementary information.</li>
+              <li>PCA was used for interpretation only; the models were trained on the original standardised features.</li>
+              <li>Logistic Regression was used first as an interpretable linear baseline.</li>
+              <li>An RBF-kernel SVM was then trained as a non-linear comparison model and improved further with GridSearchCV.</li>
+              <li>The tuned SVM used `C = 10` and `gamma = 0.1`, with mean cross-validated accuracy of `0.841` on the training folds.</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Evaluation</h2>
+            <ul>
+              <li>Logistic Regression reached `0.462` accuracy and `0.466` macro F1 on the test set.</li>
+              <li>The untuned SVM improved this to `0.743` accuracy and `0.729` macro F1.</li>
+              <li>The tuned SVM reached `0.860` accuracy and `0.859` macro F1 on the held-out test set.</li>
+              <li>The tuned confusion matrix shows very strong performance for classes `0`, `1`, and `2`, while class `3` remains the hardest to separate.</li>
+              <li>A supplementary permutation-importance view highlighted `X12`, `X8`, `X15`, `X1`, and `X11` among the most influential features for the final model.</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Portfolio Positioning</h2>
+            <p>This is a solid junior data science portfolio piece because it shows a full modelling workflow rather than just a final score. The strongest elements are the clean preparation evidence, the baseline-to-tuned comparison, and the honest treatment of limitations around in-dataset evaluation and lack of subject-wise validation.</p>
+            <p class="note">The project is framed as an explained in-dataset classification workflow, not as a deployable clinical system. That limitation is important and was preserved from the report rather than hidden.</p>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <figure>
+            <img src="images/missing-values-check.png" alt="Missing values check for BEED dataset">
+            <figcaption class="caption">Missing-values check confirming zero nulls across all 16 features and the target label.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/dataset-integrity.png" alt="Dataset integrity checks for BEED dataset">
+            <figcaption class="caption">Integrity checks confirming shape, zero duplicate rows, and balanced class counts of 2,000 per label.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/stratified-split.png" alt="Stratified train test split counts">
+            <figcaption class="caption">Stratified train-test split preserving balanced class counts across 5,600 training rows and 2,400 test rows.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/correlation-heatmap.png" alt="Correlation heatmap for X1 to X16">
+            <figcaption class="caption">Feature correlation heatmap showing substantial positive relationships across several EEG-derived predictors.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/pca-explained-variance.png" alt="PCA cumulative explained variance chart">
+            <figcaption class="caption">PCA view used for interpretation, showing that the first three components explain around 85% of the variance.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/confusion-logistic.png" alt="Confusion matrix for Logistic Regression">
+            <figcaption class="caption">Confusion matrix for the Logistic Regression baseline, which achieved 0.462 accuracy and 0.466 macro F1.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/confusion-svm-tuned.png" alt="Confusion matrix for tuned SVM">
+            <figcaption class="caption">Confusion matrix for the tuned RBF SVM, which improved held-out performance to 0.860 accuracy and 0.859 macro F1.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/gridsearch-results.png" alt="GridSearch best parameters and accuracy">
+            <figcaption class="caption">GridSearchCV output showing the selected tuned parameters `C = 10` and `gamma = 0.1` with mean CV accuracy of 0.841.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/permutation-importance.png" alt="Permutation importance for tuned SVM">
+            <figcaption class="caption">Supplementary permutation-importance plot highlighting the features most associated with drops in test accuracy when shuffled.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <section class="section">
+        <h2>Key Metrics</h2>
+        <div class="metrics">
+          <div class="metric"><strong>8,000</strong>Rows in the local BEED analysis file</div>
+          <div class="metric"><strong>16</strong>EEG-derived predictor features used for modelling</div>
+          <div class="metric"><strong>0.860</strong>Tuned SVM test accuracy</div>
+          <div class="metric"><strong>0.859</strong>Tuned SVM macro F1 score</div>
+        </div>
+      </section>
+    </section>
+
+    <div class="footer">Source basis: `AE DATA Science - Copy.DOCX`, `BEED_Data.csv`, Python files in `Code/`, and verified figures and screenshots from the submission archive.</div>
+  </main>
+  <script src="lightbox.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warehouse Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">Database Systems Project</div>
+      <h1>Warehouse Management System with SQLite and Tkinter</h1>
+      <p class="sub">Designed and implemented a warehouse database system for inventory, orders, suppliers, employees, and storage locations using SQLite and Python. The project included a relational schema, Tkinter login and employee-management interfaces, XML export, BLOB image storage, and threaded order insertion.</p>
+      <div class="pills">
+        <span class="pill">SQLite</span>
+        <span class="pill">Python</span>
+        <span class="pill">Tkinter</span>
+        <span class="pill">XML</span>
+        <span class="pill">BLOB Storage</span>
+        <span class="pill">Threading</span>
+        <span class="pill">3NF Design</span>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="grid">
+        <div>
+          <h2>Overview</h2>
+          <p>This project was built around a warehouse operations scenario and focused on creating a structured database-backed system rather than only writing SQL queries in isolation. The implementation combined schema design, basic operational tooling, and data-handling features across the application layer.</p>
+
+          <div class="section">
+            <h2>What Was Built</h2>
+            <ul>
+              <li>A relational SQLite database covering employees, orders, products, suppliers, warehouse locations, login details, stock, and employee photos.</li>
+              <li>A Tkinter login workflow with SHA-256 password hashing and credential validation against the database.</li>
+              <li>An employee management interface for adding staff records through a GUI.</li>
+              <li>An XML export module that extracted order records into a structured <code>orders.xml</code> file.</li>
+              <li>BLOB storage and retrieval for employee photos inside the database.</li>
+              <li>A multi-threaded order insertion script that split order inserts into two concurrent batches.</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Technical Evidence</h2>
+            <ul>
+              <li>The included database contains 8 non-system tables: <code>EmployeePhotos</code>, <code>Employees</code>, <code>LoginDetails</code>, <code>Orders</code>, <code>Products</code>, <code>Stock</code>, <code>Suppliers</code>, and <code>WarehouseLocations</code>.</li>
+              <li>The database currently holds 10 employees, 13 orders, 5 products, 5 suppliers, 5 warehouse locations, 1 login record, and 1 stored employee photo.</li>
+              <li>The codebase includes separate modules for GUI login, employee insertion, password hashing, XML export, BLOB retrieval, and threaded inserts.</li>
+              <li>The schema design and ERD clearly reflect a warehouse workflow with entity separation across employees, products, suppliers, orders, and locations.</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Business Value</h2>
+            <p>The system was designed to support common warehouse needs: stock visibility, supplier tracking, employee assignment, and order processing. The strongest portfolio value is that it shows a complete small system rather than a single script: database design, application logic, and data exchange features were combined in one deliverable.</p>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <figure>
+            <img src="images/image1.png" alt="Entity relationship diagram for the warehouse database">
+            <figcaption class="caption">Entity relationship diagram for the Prime Warehousing Solutions schema.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/image25.png" alt="Successful login to the Tkinter interface">
+            <figcaption class="caption">Tkinter login screen showing successful authentication into the control room interface.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/image50.png" alt="XML output from exported orders">
+            <figcaption class="caption">Formatted XML export of order records generated from the SQLite database.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/image52.jpeg" alt="Original employee photo used for BLOB storage">
+            <figcaption class="caption">Original employee photo used as the source for BLOB storage.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/image56.png" alt="Retrieved image from SQLite BLOB storage">
+            <figcaption class="caption">Image retrieved back from the database, showing successful BLOB storage and recovery.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/image58.png" alt="Orders table after threaded inserts">
+            <figcaption class="caption">Orders table after the threaded insertion script completed its two insertion batches.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <section class="section">
+        <h2>Key Metrics</h2>
+        <div class="metrics">
+          <div class="metric"><strong>8</strong>Core tables in the SQLite database</div>
+          <div class="metric"><strong>13</strong>Orders currently stored</div>
+          <div class="metric"><strong>10</strong>Employees in the dataset</div>
+          <div class="metric"><strong>1</strong>Stored employee photo BLOB</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Portfolio Summary</h2>
+        <p>This project is strong portfolio material because it moves beyond database theory. It shows schema design, a real local database file, GUI-based interaction, hashed login validation, XML export, image storage, and concurrent processing in Python. For a student project, that breadth is materially useful.</p>
+        <p class="note">One caution from the implementation review: the trigger definitions present in the database appear less reliable than the rest of the system because they reference columns or tables that are not clearly present in the current schema. For portfolio use, the strongest focus should stay on the schema, GUI, XML, BLOB, and threading work.</p>
+      </section>
+    </section>
+
+    <div class="footer">Source basis: report text, SQLite schema, Python modules, and verified screenshots extracted from the submitted project files.</div>
+  </main>
+  <script src="lightbox.js"></script>
+</body>
+</html>
