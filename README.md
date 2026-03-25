@@ -4,10 +4,11 @@ This repository contains a small static portfolio site built from selected analy
 
 ## Projects
 
-- Excel Superstore Dashboard
-- Python EDA and Data Cleaning
-- Tableau Sales and Profit Dashboard
-- Student Performance Clustering and KNN Classification
+- [Portfolio Home](./index.html)
+- [Excel Superstore Dashboard](./excel-superstore.html)
+- [Python EDA and Data Cleaning](./python-superstore.html)
+- [Tableau Sales and Profit Dashboard](./tableau-superstore.html)
+- [Student Performance Clustering and KNN Classification](./student-ml.html)
 
 ## Stack
 
@@ -34,6 +35,10 @@ This repository contains a small static portfolio site built from selected analy
 If GitHub Pages is enabled for this repository, `index.html` should be used as the site homepage.
 
 The `README.md` appears on the repository page on GitHub, but it does not replace `index.html` as the GitHub Pages landing page.
+
+Expected Pages URL after enabling GitHub Pages:
+
+- `https://piripack.github.io/data-analytics-portfolio/`
 
 ## Notes
 
