@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Performance Modelling</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">Project 04</div>
+      <h1>Student Performance Modelling</h1>
+      <p class="sub">Used student-performance data to segment learner patterns with K-Means and classify pass/fail outcomes with KNN based on Study_Hours, Attendance_Rate, and Grade.</p>
+    </section>
+    <nav class="nav">
+      <a href="index.html">Back to index</a>
+      <a href="excel-superstore.html">Return to project 01</a>
+    </nav>
+    <section class="content">
+      <div class="project">
+        <div>
+          <h2>Overview</h2>
+          <p>This project focused on two clear tasks: grouping students by study behaviour and attendance using clustering, and classifying pass/fail outcomes using KNN. The page is intentionally focused on the parts of the report that are cleanly supported by the extracted visuals.</p>
+          <p><span class="pill">Python</span> <span class="pill">MinMaxScaler</span> <span class="pill">K-Means</span> <span class="pill">Elbow Method</span> <span class="pill">KNN</span></p>
+          <div class="section">
+            <h2>Approach</h2>
+            <ul>
+              <li>Scaled Study_Hours and Attendance_Rate using MinMaxScaler.</li>
+              <li>Applied an 80/20 train-test split for the classification step.</li>
+              <li>Used the elbow method to select the number of K-Means clusters.</li>
+              <li>Built a KNN classifier to predict pass/fail outcomes.</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>Key Findings</h2>
+            <ul>
+              <li>KNN classification achieved 71.4% accuracy on the test set.</li>
+              <li>K-Means clustering suggested 3 clusters as the best fit by the elbow method.</li>
+              <li>The clustering visuals show distinct groupings based on normalised Study_Hours and Attendance_Rate.</li>
+              <li>The pass/fail distribution in the report was heavily imbalanced, with 87.9% pass and 12.1% fail.</li>
+            </ul>
+          </div>
+          <p class="note">This project page focuses on clustering patterns and KNN classification results from the student-performance analysis.</p>
+        </div>
+        <div class="gallery">
+          <figure>
+            <img src="images/image64.jpeg" alt="Elbow method for optimal clusters">
+            <figcaption class="caption">Elbow chart used to select the cluster count.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/image65.jpeg" alt="K-Means clustering with centroids">
+            <figcaption class="caption">Student clusters visualised with centroids.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/image66.jpeg" alt="KNN classification accuracy result">
+            <figcaption class="caption">KNN classification output showing the reported 71.4% accuracy.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/image63.png" alt="K-Means inertia values for clustering">
+            <figcaption class="caption">K-Means inertia values used before visualising the elbow curve.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <section class="section">
+        <h2>Metrics</h2>
+        <div class="metrics">
+          <div class="metric"><strong>71.4%</strong>KNN accuracy</div>
+          <div class="metric"><strong>3</strong>Optimal clusters</div>
+          <div class="metric"><strong>87.9%</strong>Pass share</div>
+          <div class="metric"><strong>12.1%</strong>Fail share</div>
+        </div>
+      </section>
+      <section class="section">
+        <h2>Analytical Value</h2>
+        <p>This project shows a sensible entry-level modelling workflow: scale the features, inspect whether natural groups appear in the data, and test a simple classifier for a clear prediction task. It is presented as exploratory analysis rather than production-grade modelling.</p>
+      </section>
+    </section>
+    <div class="footer">Source basis: verified clustering and KNN screenshots extracted from the uploaded report.</div>
+  </main>
+  <script src="lightbox.js"></script>
+</body>
+</html>

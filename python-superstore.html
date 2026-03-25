@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Superstore EDA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">Project 02</div>
+      <h1>Python EDA and Data Cleaning on Superstore</h1>
+      <p class="sub">Audited and profiled the Superstore transactional dataset in Python to validate structure, inspect distributions, and document repeatable cleaning steps.</p>
+    </section>
+    <nav class="nav">
+      <a href="index.html">Back to index</a>
+      <a href="tableau-superstore.html">Next: Tableau Dashboard</a>
+    </nav>
+    <section class="content">
+      <div class="project">
+        <div>
+          <h2>Overview</h2>
+          <p>This project moved the Superstore analysis from manual spreadsheet work into a code-based workflow using pandas, numpy, and scikit-learn utilities. The emphasis was on data quality checks, profiling, and descriptive analysis that could be repeated more reliably than in Excel alone.</p>
+          <p><span class="pill">Python</span> <span class="pill">pandas</span> <span class="pill">numpy</span> <span class="pill">SimpleImputer</span></p>
+          <div class="section">
+            <h2>Approach</h2>
+            <ul>
+              <li>Loaded the dataset with <code>pd.read_csv()</code> and inspected structure with <code>head()</code>, <code>tail()</code>, and <code>info()</code>.</li>
+              <li>Checked dimensions, data types, and memory usage.</li>
+              <li>Used <code>isnull().sum()</code> and <code>drop_duplicates()</code> as quality checks.</li>
+              <li>Tested imputation strategies with SimpleImputer, even though the documented dataset state showed no null values.</li>
+              <li>Calculated descriptive statistics and grouped results by category.</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>Key Findings</h2>
+            <ul>
+              <li>The dataset contained 9,994 rows and 22 columns, all non-null, with a reported size of 1.7 MB.</li>
+              <li>Sales ranged from 0.44 to 22,638.48, indicating a wide spread in transaction values.</li>
+              <li>The reported sales standard deviation was 623.25 and variance was 38,434.45, confirming high variability.</li>
+              <li>The workflow showed a clear shift from one-off spreadsheet analysis to a more repeatable code-based process.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="gallery">
+          <figure>
+            <img src="images/image54.png" alt="Python libraries and data loading screenshot">
+            <figcaption class="caption">Initial Python workflow: library setup and dataset loading.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/image58.png" alt="Python descriptive statistics screenshot">
+            <figcaption class="caption">Descriptive statistics for sales and grouped analysis by category.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <section class="section">
+        <h2>Metrics</h2>
+        <div class="metrics">
+          <div class="metric"><strong>9,994</strong>Rows profiled</div>
+          <div class="metric"><strong>22</strong>Columns inspected</div>
+          <div class="metric"><strong>1.7 MB</strong>Reported dataset size</div>
+          <div class="metric"><strong>22,638.48</strong>Maximum sales value</div>
+        </div>
+      </section>
+      <section class="section">
+        <h2>Business Value</h2>
+        <p>The main value here is workflow maturity rather than a specific chart. This project shows the ability to profile a dataset systematically, document data quality assumptions, and prepare analysis in a form that can be rerun and extended.</p>
+      </section>
+    </section>
+    <div class="footer">Source basis: figures 31 and 35 from the uploaded report.</div>
+  </main>
+  <script src="lightbox.js"></script>
+</body>
+</html>

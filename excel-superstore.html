@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel Superstore Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">Project 01</div>
+      <h1>Excel Superstore Sales Dashboard</h1>
+      <p class="sub">Built an interactive Excel dashboard on the Sample - Superstore dataset to analyse monthly sales trends, category profitability, customer-segment differences, and filter-driven views.</p>
+    </section>
+    <nav class="nav">
+      <a href="index.html">Back to index</a>
+      <a href="python-superstore.html">Next: Python EDA</a>
+    </nav>
+    <section class="content">
+      <div class="project">
+        <div>
+          <h2>Overview</h2>
+          <p>This project used Excel to turn a transactional retail dataset into a dashboard that could be explored by month and by customer segment. The work combined descriptive statistics, PivotTables, PivotCharts, slicers, and formula-driven feature creation.</p>
+          <p><span class="pill">Excel</span> <span class="pill">PivotTables</span> <span class="pill">PivotCharts</span> <span class="pill">Slicers</span> <span class="pill">AVERAGEIF</span> <span class="pill">SUMIF</span></p>
+          <div class="section">
+            <h2>Approach</h2>
+            <ul>
+              <li>Checked data completeness and descriptive statistics for sales.</li>
+              <li>Created an <code>Order Month</code> field from the order date to support monthly trend analysis.</li>
+              <li>Built PivotTables for monthly sales, category sales and profit, and average sales by segment.</li>
+              <li>Connected slicers across multiple charts to support interactive filtering.</li>
+              <li>Tested dashboard states for all segments, excluding Consumer, and Home Office only.</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>Key Findings</h2>
+            <ul>
+              <li>Sales were strongly skewed: mean sales were 229.86, while the median was 54.49.</li>
+              <li>The outlier threshold was reported as 498.93, showing that a small number of high-value transactions heavily influenced totals.</li>
+              <li>September had the highest monthly sales at 81,777.35, while February had the lowest at 4,519.89.</li>
+              <li>Technology generated the strongest profit performance, while Furniture showed weaker profitability relative to sales.</li>
+              <li>Home Office had the highest average sales value, while Consumer produced the highest total sales overall.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="gallery">
+          <figure>
+            <img src="images/image25.png" alt="Excel dashboard with segment slicer and sales views">
+            <figcaption class="caption">Full Excel dashboard view showing average sales by segment, sales and profit by product, and monthly sales trend.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/image26.png" alt="Excel dashboard filtered to Corporate segment">
+            <figcaption class="caption">Dashboard state filtered to the Corporate segment.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/image27.png" alt="Excel dashboard filtered to Home Office">
+            <figcaption class="caption">Dashboard state filtered to Home Office customers.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/image17.png" alt="Excel category sales and profit summary table">
+            <figcaption class="caption">Category-level sales and profit summary table used to compare Furniture, Office Supplies, and Technology.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <section class="section">
+        <h2>Metrics</h2>
+        <div class="metrics">
+          <div class="metric"><strong>229.86</strong>Mean sales</div>
+          <div class="metric"><strong>54.49</strong>Median sales</div>
+          <div class="metric"><strong>81,777.35</strong>Peak month sales</div>
+          <div class="metric"><strong>1,161,401.05</strong>Consumer total sales</div>
+        </div>
+      </section>
+      <section class="section">
+        <h2>Business Value</h2>
+        <p>The project demonstrates how a spreadsheet workflow can still support structured business analysis when the dashboard is designed well. The output made it possible to identify seasonal peaks, compare category profitability, and separate average transaction value from total segment contribution.</p>
+      </section>
+    </section>
+    <div class="footer">Source basis: verified Excel dashboard and category summary screenshots extracted from the uploaded report.</div>
+  </main>
+  <script src="lightbox.js"></script>
+</body>
+</html>
